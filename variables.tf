@@ -22,19 +22,19 @@ variable "alias" {
 
 variable "alias_name" {
   type        = string
-  description = "The Name of the application or solution  (e.g. `bastion` or `portal`)"
+  description = "The Name of the application or solution  (e.g. `bastion` or `portal`) for the alias"
   default     = ""
 }
 
 variable "alias_target_zone_id" {
   type        = string
-  description = "Route53 DNS Zone ID"
+  description = "Route53 DNS Zone ID for the alias"
   default     = ""
 }
 
 variable "evaluate_target_health" {
-  type        = string
-  description = "Valid only when alias=true. Set to true if you want Route 53 to determine whether to respond to DNS queries using this resource record set by checking the health of the resource record set. "
+  type        = bool
+  description = "Valid only when alias=true. Set to true if you want Route 53 to determine whether to respond to DNS queries using this resource record set by checking the health of the resource record set."
   default     = false
 }
 

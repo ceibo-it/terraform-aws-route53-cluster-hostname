@@ -10,6 +10,10 @@ Terraform module to define a consistent AWS Route53 hostname
 |------|-------------|:----:|:-----:|:-----:|
 | enabled | Set to false to prevent the module from creating any resources | bool | `true` | no |
 | name | The Name of the application or solution  (e.g. `bastion` or `portal`) | string | - | yes |
+| alias | Set to true if this is an alias record | bool | `false` | no |
+| alias_name | The Name of the application or solution  (e.g. `bastion` or `portal`) for the alias | string | - | no |
+| alias_target_zone_id | TRoute53 DNS Zone ID for the alias | string | - | no |
+| evaluate_target_health | Valid only when alias=true. Set to true if you want Route 53 to determine whether to respond to DNS queries using this resource record set by checking the health of the resource record set | bool | `false` | no |
 | records | DNS records to create | list(string) | - | yes |
 | ttl | The TTL of the record to add to the DNS zone to complete certificate validation | string | `300` | no |
 | type | Type of DNS records to create | string | `CNAME` | no |
