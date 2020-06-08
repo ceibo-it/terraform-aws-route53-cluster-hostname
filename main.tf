@@ -1,5 +1,5 @@
 resource "aws_route53_record" "default" {
-  count   = var.enabled && var.alias ? 0 : 1
+  count   = var.enabled && ! var.alias ? 1 : 0
   zone_id = var.zone_id
   name    = var.name
   type    = var.type
